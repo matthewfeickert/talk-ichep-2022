@@ -33,7 +33,7 @@ forbidden. The files must be uploaded to the Indico platform of the conference .
 
 [Lukas Heinrich](https://github.com/lukasheinrich)
 
-Technical University Munich
+Technical University of Munich
 ]
 .kol-1-3.center[
 .circle.width-80[![Matthew](https://avatars2.githubusercontent.com/u/5142394)]
