@@ -374,9 +374,12 @@ print(f"Expected CLs band: {[exp.tolist() for exp in cls_exp_band]}")
 
 .kol-3-5[
 .tiny[
+```console
+$ python -m pip install pyhf[jax,contrib]
+$ pyhf contrib download https://doi.org/10.17182/hepdata.90607.v3/r3 1Lbb-pallet
+```
 ```python
 import json
-
 import matplotlib.pyplot as plt
 import numpy as np
 import pyhf
