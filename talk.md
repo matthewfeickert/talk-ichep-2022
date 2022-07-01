@@ -3,8 +3,6 @@ count: false
 
 # `pyhf`: pure-Python implementation of HistFactory with tensors and automatic differentiation
 
-<br>
-
 .huge.blue[Matthew Feickert]<br>
 .huge[(University of Wisconsin-Madison)]
 <br><br>
