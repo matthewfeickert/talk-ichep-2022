@@ -16,10 +16,11 @@ July 8th, 2022
 # Talk information
 <br><br>
 
-- **15 minute** presentation on pyhf
-   - **12 minutes** talk
-   - **3 minutes** questions
-- talk scope: an introduction and discussion of backends / interface / project scope.
+- .bold[talk time]: .bold[15 minute] presentation on pyhf
+   - .bold[12 minutes] talk
+   - .bold[3 minutes] questions
+- .bold[talk upload]: The only accepted formats for the slides are pdf (preferred) or pptx, any other format is strictly
+forbidden. The files must be uploaded to the Indico platform of the conference .bold[before 6 pm of the day before the talk], no other method of submission will be allowed.
 
 ---
 # `pyhf` team
