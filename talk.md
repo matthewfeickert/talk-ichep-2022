@@ -13,6 +13,15 @@ count: false
 July 8th, 2022
 
 ---
+# Talk information
+<br><br>
+
+- **15 minute** presentation on pyhf
+   - **12 minutes** talk
+   - **3 minutes** questions
+- talk scope: an introduction and discussion of backends / interface / project scope.
+
+---
 # `pyhf` team
 
 <br>
