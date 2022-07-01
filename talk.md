@@ -44,7 +44,7 @@ University of Wisconsin-Madison<br>
 (Illinois for work presented today)
 ]
 .kol-1-3.center[
-.circle.width-75[![Giordon](figures/collaborators/stark.png)]
+.circle.width-75[![Giordon](figures/collaborators/stark.jpg)]
 
 [Giordon Stark](https://github.com/kratsg)
 
