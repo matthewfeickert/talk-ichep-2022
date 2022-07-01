@@ -48,7 +48,7 @@ University of Wisconsin-Madison<br>
 
 [Giordon Stark](https://github.com/kratsg)
 
-UCSC SCIPP
+University of California Santa Cruz SCIPP
 ]
 ]
 
