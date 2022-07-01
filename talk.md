@@ -29,7 +29,7 @@ forbidden. The files must be uploaded to the Indico platform of the conference .
 
 .grid[
 .kol-1-3.center[
-.circle.width-80[![Lukas](figures/collaborators/heinrich.jpg)]
+.circle.width-80[![Lukas](figures/collaborators/heinrich.png)]
 
 [Lukas Heinrich](https://github.com/lukasheinrich)
 
