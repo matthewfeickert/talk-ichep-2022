@@ -458,47 +458,11 @@ cabinetry.visualize.data_mc(postfit_model, data)
 - .large[An enabling technology for .bold[reinterpretation]] (`pyhf` + RECAST)
 
 ---
-# Call to action: pyhf and Combine interoperability
-
-.kol-1-3[
-- Long standing (2018) question: Is it possible for [Combine](https://cms-analysis.github.io/HiggsAnalysis-CombinedLimit/) users to use pyhf?
-- How to translate between Combine and HistFactory models?
-- ...or, what is needed in a HistFactory v2 spec to be an acceptable alternative for Combine?
-- The pyhf dev team wants to work to make this happen!
-]
-.kol-2-3[
-.center.width-100[[![combine_github_issue](figures/combine_github_issue.png)](https://github.com/scikit-hep/pyhf/issues/344)]
-Fun fact! It was Lindsey Gray who first asked about this possibility when Matthew was [presenting at the US LUA 2018 meeting](https://matthewfeickert.github.io/talk-US-LUA-2018/index.html?p=talk.md#1). Thanks Lindesy!
-]
-
----
-# Call to action: Thoughts from Combine dev team
-
-.kol-1-2[
-- At November 2021 [publication of statistical models workshop](https://indico.cern.ch/event/1088121/) [Andrew Gilbert](https://github.com/ajgilbert) (CMS Combine team dev) gave suggestions for starting places
-- Recommends that instead of starting from scratch start from Combine Python parser and then work on datacard translator
-- Alex Held has taken some preliminary first steps in the past with a [`datacard-to-pyhf` project on GitHub](https://github.com/alexander-held/datacard-to-pyhf)
-
-.center.width-70[[![datacard-to-pyhf](figures/datacard-to-pyhf.png)](https://github.com/alexander-held/datacard-to-pyhf)]
-]
-.kol-1-2[
-<br><br>
-.center.width-100[[![gilbert_serialising_combine](figures/gilbert_serialising_combine.png)](https://indico.cern.ch/event/1088121/contributions/4575745/)]
-.center[Andrew Gilbert, <br>[Publication of statistical models workshop 2021](https://indico.cern.ch/event/1088121/)]
-]
-
-
----
-# Call to action: Funding for work
+# Ongoing work to support CMS Combine
 
 .kol-1-2[
 <br>
-- Tools useful for the whole particle physics community is core to IRIS-HEP's mission
-   - As an IRIS-HEP supported project pyhf wants to support CMS users
-- IRIS-HEP offers paid (up to 3 FTE-months) Fellow positions
-   - https://iris-hep.org/fellows.html
-- IRIS-HEP Analysis Systems team has a Fellow project for pyhf + Combine open now
-   - Matthew would be a project mentor
+- TODO: Describe Fellow project
 ]
 .kol-1-2[
 <br><br>
