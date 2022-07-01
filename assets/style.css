@@ -100,10 +100,6 @@ body {
     bottom: 2em;
 }
 
-.code-tiny {
-    font-size: 0.5em;
-}
-
 .tiny {
     font-size: 0.6em;
 }
@@ -413,10 +409,10 @@ td {
 /* Hack to get pyhf logo on */
 .title-slide:before {
     content: '';
-    /* background: url("https://iris-hep.org/assets/logos/pyhf-logo.png") no-repeat; */
-    background: url("../assets/logos/logo_IRIS-HEP.png") no-repeat;
+    background: url("https://iris-hep.org/assets/logos/pyhf-logo.png") no-repeat;
+    /* background: url("../assets/logos/logo_experiment.png") no-repeat; */
     background-size: 100% 100%;
-    width: 196px;
+    width: 160px;
     height: 108px;
     position: absolute;
     bottom: 2em;
