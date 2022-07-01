@@ -23,14 +23,14 @@ July 8th, 2022
 
 [Lukas Heinrich](https://github.com/lukasheinrich)
 
-CERN
+Technical University Munich
 ]
 .kol-1-3.center[
 .circle.width-80[![Matthew](https://avatars2.githubusercontent.com/u/5142394)]
 
 [Matthew Feickert](https://www.matthewfeickert.com/)
 
-Wisconsin<br>
+University of Wisconsin-Madison<br>
 (Illinois for work presented today)
 ]
 .kol-1-3.center[
