@@ -238,6 +238,7 @@ $$
 ]
 .kol-1-2[
 <br>
+- .bold[TODO: NEED TO REVISE THIS GIVEN CURRENT DISCUSSIONS]
 - Show hardware acceleration giving .bold[order of magnitude speedup] for some models!
 - Improvements over traditional
    - 10 hrs to 30 min; 20 min to 10 sec
@@ -448,6 +449,51 @@ cabinetry.visualize.data_mc(postfit_model, data)
 .center.width-100[[![sabine_workshop_slide](figures/IRIS-HEP-fellow-position.png)](https://iris-hep.org/fellow_projects.html)]
 .center.smaller[[.bold[A pyhf converter for binned likelihood models in CMS Combine]](https://iris-hep.org/fellow_projects.html)]
 ]
+
+---
+# Browser native ecosystem as of April 2022
+<!--  -->
+<!--  -->
+.kol-1-1[
+.kol-1-2.code-tiny[
+```python
+# one bin example from pyhf v0.6.3 docs
+import pyhf
+import numpy as np
+import matplotlib.pyplot as plt
+from pyhf.contrib.viz import brazil
+
+pyhf.set_backend("numpy")
+model = pyhf.simplemodels.uncorrelated_background(
+    signal=[10.0], bkg=[50.0], bkg_uncertainty=[7.0]
+)
+data = [55.0] + model.config.auxdata
+
+poi_vals = np.linspace(0, 5, 41)
+results = [
+    pyhf.infer.hypotest(
+        test_poi, data, model, test_stat="qtilde", return_expected_set=True
+    )
+    for test_poi in poi_vals
+]
+
+fig, ax = plt.subplots()
+fig.set_size_inches(7, 5)
+brazil.plot_results(poi_vals, results, ax=ax);
+```
+<!--  -->
+.center.width-45[[![pyhf-brazil-band](figures/pyhf-brazil-band.svg)](https://pyhf.readthedocs.io/en/v0.6.3/)]
+]
+.kol-1-2[
+<iframe
+   src="https://jupyterlite.github.io/demo/repl/index.html?kernel=python&toolbar=1&code=import%20piplite%0Aawait%20piplite.install%28%5B%22pyhf%3D%3D0.6.3%22%2C%20%22requests%22%5D%29%0A%25matplotlib%20inline%0Aimport%20pyhf"
+   width="100%"
+   height="500px"
+></iframe>
+]
+
+]
+.center[[Pyodide](https://pyodide.org/en/stable/) CPython port to WebAssembly/Emscripten powering [JupyterLite](https://jupyterlite.readthedocs.io/) kernel]
 
 ---
 # Summary
