@@ -6,13 +6,13 @@ count: false
 <br>
 
 .huge.blue[Matthew Feickert]<br>
-.huge[(University of Illinois at Urbana-Champaign)]
+.huge[(University of Wisconsin-Madison)]
 <br><br>
 [matthew.feickert@cern.ch](mailto:matthew.feickert@cern.ch)
 
-[CMS Analysis Tools Task Force Meeting](https://indico.cern.ch/event/1100873/contributions/4631656/)
+[International Conference on High Energy Physics (ICHEP) 2022](https://agenda.infn.it/event/28874/contributions/169217/)
 
-December 1st, 2021
+July 8th, 2022
 
 ---
 # `pyhf` team
@@ -32,7 +32,8 @@ CERN
 
 [Matthew Feickert](https://www.matthewfeickert.com/)
 
-Illinois
+Wisconsin<br>
+(Illinois for work presented today)
 ]
 .kol-1-3.center[
 .circle.width-75[![Giordon](figures/collaborators/stark.png)]
@@ -42,7 +43,7 @@ Illinois
 UCSC SCIPP
 ]
 ]
-<br>
+
 .center.large[plus more than 20 contributors]
 
 ---
