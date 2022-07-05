@@ -317,7 +317,7 @@ $$
 ]
 
 ---
-# Python API Example: Upper limit on published results
+# Python API Example: Upper limit
 
 .kol-3-5[
 .tiny[
@@ -410,7 +410,7 @@ fig.savefig("upper_limit.pdf")
 .width-65[[![analysis-systems-scope](figures/ecosystem.png)](https://iris-hep.org/as.html)]
 ]
 - .large[Analysis Systems pipeline: deployable stack of experiment agnostic infrastructure]
-   - c.f. demonstration at [IRIS-HEP Analysis Grand Challenge Tools Workshop 2021](https://indico.cern.ch/event/1076231/contributions/4560405/)
+   - c.f. demonstration at [IRIS-HEP Analysis Grand Challenge Tools Workshop 2022](https://indico.cern.ch/event/1126109/contributions/4780156/)
 - .large[Accelerating fitting (reducing time to .bold[insight] (statistical inference)!)] (`pyhf` + `cabinetry`)
 - .large[An enabling technology for .bold[reinterpretation]] (`pyhf` + RECAST)
 
