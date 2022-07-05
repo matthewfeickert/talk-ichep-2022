@@ -500,6 +500,14 @@ brazil.plot_results(poi_vals, results, ax=ax);
 
 .center[[Pyodide](https://pyodide.org/en/stable/) CPython port to WebAssembly/Emscripten powering [JupyterLite](https://jupyterlite.readthedocs.io/) kernel]
 
+<!-- try-pyhf slide -->
+---
+# Enabling full web apps with PyScript
+
+.center.width-100[[![try-pyhf](figures/try-pyhf.png)](https://kratsg.github.io/try-pyhf/)]
+
+.center[Software/statistics training, web applications, schemea validation enabled with [Pyodide](https://pyodide.org/en/stable/) and PyScript]
+
 ---
 # Summary
 .kol-2-3[
