@@ -86,7 +86,7 @@ Provide constraints on models through setting best limits
 
 - A flexible probability density function (p.d.f.) template to build statistical models in high energy physics
 - Developed in 2011 during work that lead to the Higgs discovery [[CERN-OPEN-2012-016](http://inspirehep.net/record/1236448)]
-- Widely used by ATLAS for .bold[measurements of known physics] (Standard Model) and .bold[searches for new physics] (beyond the Standard Model)
+- Widely used by ATLAS for .bold[measurements of known physics] and .bold[searches for new physics]
 
 .kol-2-5.center[
 .width-90[[![HIGG-2016-25](figures/HIGG-2016-25.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/HIGG-2016-25/)]
