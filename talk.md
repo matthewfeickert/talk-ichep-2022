@@ -317,49 +317,7 @@ $$
 ]
 
 ---
-# ATLAS validation and publication of likelihoods
-
-.kol-1-2[
-.center.width-100[[![ATLAS_PUB_Note_title](figures/ATLAS_PUB_Note_title.png)](https://cds.cern.ch/record/2684863)]
-
-.center.width-90[[![overlay_multiplex_contour](figures/overlay_multiplex_contour.png)](https://cds.cern.ch/record/2684863)]
-
-<br>
-.center[(ATLAS, 2019)]
-]
-.kol-1-2[
-.center.width-100[[![CERN_news_story](figures/CERN_news_story.png)](https://home.cern/news/news/knowledge-sharing/new-open-release-allows-theorists-explore-lhc-data-new-way)]
-.center[(CERN, 2020)]
-]
-
----
-# Large community adoption followed (2020 on)
-<!-- .center.large.bold[Placeholder slide] -->
-.center[
-.width-95[[![community-adoption](figures/community-adoption.svg)](https://scikit-hep.org/pyhf/citations.html)]
-]
-
-
----
-# Extending and visualization: cabinetry
-
-.kol-1-3[
-<br>
-- .bold[pyhf] focuses on the modeling (library not a framework)
-- Leverage the design of the .bold[Scikit-HEP ecosystem] and close communication between pyhf dev team and cabinetry lead dev Alexander Held
-- .bold[cabinetry] designs & steers template profile likelihood fits
-- Uses pyhf as the inference engine
-- Provides common visualization for inference validation
-]
-.kol-2-3[
-.center.width-50[[![cabinetry_logo](figures/cabinetry_logo_small.png)](https://github.com/scikit-hep/cabinetry)]
-.center.width-100[[![cabinetry_plots](figures/cabinetry_plots.png)](https://indico.cern.ch/event/1056428/contributions/4523825/)]
-
-.center[Alexander Held, [ATLAS SUSY Workshop 2021](https://indico.cern.ch/event/1056428/contributions/4523825/)]
-]
-
----
-# Run Example: Upper limit
+# Python API Example: Upper limit on published results
 
 .kol-3-5[
 .tiny[
@@ -406,45 +364,44 @@ fig.savefig("upper_limit.pdf")
 ]
 
 ---
-# Run Example: Extend with cabinetry
-.kol-5-7[
-.tiny[
-```python
-import json
-import cabinetry
-import pyhf
-from cabinetry.model_utils import prediction
-from pyhf.contrib.utils import download
+# ATLAS validation and publication of likelihoods
 
-# download the ATLAS bottom-squarks analysis probability models from HEPData
-download("https://www.hepdata.net/record/resource/1935437?view=true", "bottom-squarks")
+.kol-1-2[
+.center.width-100[[![ATLAS_PUB_Note_title](figures/ATLAS_PUB_Note_title.png)](https://cds.cern.ch/record/2684863)]
 
-# construct a workspace from a background-only model and a signal hypothesis
-bkg_only_workspace = pyhf.Workspace(
-    json.load(open("bottom-squarks/RegionC/BkgOnly.json"))
-)
-patchset = pyhf.PatchSet(json.load(open("bottom-squarks/RegionC/patchset.json")))
-workspace = patchset.apply(bkg_only_workspace, "sbottom_600_280_150")
+.center.width-90[[![overlay_multiplex_contour](figures/overlay_multiplex_contour.png)](https://cds.cern.ch/record/2684863)]
 
-# construct the probability model and observations
-model, data = cabinetry.model_utils.model_and_data(workspace)
-
-# produce visualizations of the pre-fit model and observed data
-prefit_model = prediction(model)
-cabinetry.visualize.data_mc(prefit_model, data)
-
-# fit the model to the observed data
-fit_results = cabinetry.fit.fit(model, data)
-
-# produce visualizations of the post-fit model and observed data
-postfit_model = prediction(model, fit_results=fit_results)
-cabinetry.visualize.data_mc(postfit_model, data)
-```
+<br>
+.center[(ATLAS, 2019)]
 ]
+.kol-1-2[
+.center.width-100[[![CERN_news_story](figures/CERN_news_story.png)](https://home.cern/news/news/knowledge-sharing/new-open-release-allows-theorists-explore-lhc-data-new-way)]
+.center[(CERN, 2020)]
 ]
-.kol-2-7.center[
-.center.width-90[![cabinetry_SR_metsigST_prefit](figures/cabinetry_SR_metsigST_prefit.png)]
-.center.width-90[![cabinetry_SR_metsigST_postfit](figures/cabinetry_SR_metsigST_postfit.png)]
+
+---
+# Large community adoption followed (2020 on)
+<!-- .center.large.bold[Placeholder slide] -->
+.center[
+.width-95[[![community-adoption](figures/community-adoption.svg)](https://scikit-hep.org/pyhf/citations.html)]
+]
+
+---
+# Extending and visualization: cabinetry
+
+.kol-1-3[
+<br>
+- .bold[pyhf] focuses on the modeling (library not a framework)
+- Leverage the design of the .bold[Scikit-HEP ecosystem] and close communication between pyhf dev team and cabinetry lead dev Alexander Held
+- .bold[cabinetry] designs & steers template profile likelihood fits
+- Uses pyhf as the inference engine
+- Provides common visualization for inference validation
+]
+.kol-2-3[
+.center.width-50[[![cabinetry_logo](figures/cabinetry_logo_small.png)](https://github.com/scikit-hep/cabinetry)]
+.center.width-100[[![cabinetry_plots](figures/cabinetry_plots.png)](https://indico.cern.ch/event/1056428/contributions/4523825/)]
+
+.center[Alexander Held, [ATLAS SUSY Workshop 2021](https://indico.cern.ch/event/1056428/contributions/4523825/)]
 ]
 
 ---
@@ -660,6 +617,48 @@ Backup
    - with own DOI! .width-20[[![DOI](https://img.shields.io/badge/DOI-10.17182%2Fhepdata.90607.v3%2Fr3-blue.svg)](https://doi.org/10.17182/hepdata.90607.v3/r3)]
 
 .center.width-90[![HEPData_streamed_likelihoods](figures/carbon_patchset_example.png)]
+
+---
+# API Example: Extend with cabinetry
+.kol-5-7[
+.tiny[
+```python
+import json
+import cabinetry
+import pyhf
+from cabinetry.model_utils import prediction
+from pyhf.contrib.utils import download
+
+# download the ATLAS bottom-squarks analysis probability models from HEPData
+download("https://www.hepdata.net/record/resource/1935437?view=true", "bottom-squarks")
+
+# construct a workspace from a background-only model and a signal hypothesis
+bkg_only_workspace = pyhf.Workspace(
+    json.load(open("bottom-squarks/RegionC/BkgOnly.json"))
+)
+patchset = pyhf.PatchSet(json.load(open("bottom-squarks/RegionC/patchset.json")))
+workspace = patchset.apply(bkg_only_workspace, "sbottom_600_280_150")
+
+# construct the probability model and observations
+model, data = cabinetry.model_utils.model_and_data(workspace)
+
+# produce visualizations of the pre-fit model and observed data
+prefit_model = prediction(model)
+cabinetry.visualize.data_mc(prefit_model, data)
+
+# fit the model to the observed data
+fit_results = cabinetry.fit.fit(model, data)
+
+# produce visualizations of the post-fit model and observed data
+postfit_model = prediction(model, fit_results=fit_results)
+cabinetry.visualize.data_mc(postfit_model, data)
+```
+]
+]
+.kol-2-7.center[
+.center.width-90[![cabinetry_SR_metsigST_prefit](figures/cabinetry_SR_metsigST_prefit.png)]
+.center.width-90[![cabinetry_SR_metsigST_postfit](figures/cabinetry_SR_metsigST_postfit.png)]
+]
 
 ---
 # Rapid adoption in ATLAS...
