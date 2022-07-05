@@ -164,7 +164,7 @@ $$
 ]
 .kol-3-7[
 .center.width-70[[![systematics](figures/systematics.png)](https://indico.cern.ch/event/1076231/contributions/4560405/)]
-.center[Image credit: [Alex Held](https://indico.cern.ch/event/1076231/contributions/4560405/)]
+.center[Image credit: [Alexander Held](https://indico.cern.ch/event/1076231/contributions/4560405/)]
 ]
 
 ---
@@ -358,7 +358,7 @@ $$
 .center.width-50[[![cabinetry_logo](figures/cabinetry_logo_small.png)](https://github.com/scikit-hep/cabinetry)]
 .center.width-100[[![cabinetry_plots](figures/cabinetry_plots.png)](https://indico.cern.ch/event/1056428/contributions/4523825/)]
 
-.center[Alex Held, [ATLAS SUSY Workshop 2021](https://indico.cern.ch/event/1056428/contributions/4523825/)]
+.center[Alexander Held, [ATLAS SUSY Workshop 2021](https://indico.cern.ch/event/1056428/contributions/4523825/)]
 ]
 
 ---
