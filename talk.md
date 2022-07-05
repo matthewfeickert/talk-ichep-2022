@@ -216,7 +216,7 @@ $$
    - Used in ATLAS SUSY, Exotics, and Top groups in [18 published analyses](https://scikit-hep.org/pyhf/citations.html#published-statistical-models)
    - Used by Belle II (DOI: [10.1103/PhysRevLett.127.181802](https://inspirehep.net/literature/1860766))
    - Used for reinterpretation in phenomenology paper (DOI: [10.1007/JHEP04(2019)144](https://inspirehep.net/record/1698425)) and `SModelS` <br>(DOI: [10.1016/j.cpc.2021.107909](https://inspirehep.net/literature/1814793))
-   - Ongoing work to make a bridge to CMS as of Summer 2022!
+   - Ongoing [IRIS-HEP supported Fellow](https://iris-hep.org/fellows/peterridolfi.html) work to provide conversion support to CMS Combine as of Summer 2022!
 ]
 .kol-1-2[
 <br><br>
@@ -239,7 +239,7 @@ $$
    - Used in ATLAS SUSY, Exotics, and Top groups in [18 published analyses](https://scikit-hep.org/pyhf/citations.html#published-statistical-models)
    - Used by Belle II (DOI: [10.1103/PhysRevLett.127.181802](https://inspirehep.net/literature/1860766))
    - Used for reinterpretation in phenomenology paper (DOI: [10.1007/JHEP04(2019)144](https://inspirehep.net/record/1698425)) and `SModelS` <br>(DOI: [10.1016/j.cpc.2021.107909](https://inspirehep.net/literature/1814793))
-   - Ongoing work to make a bridge to CMS as of Summer 2022!
+   - Ongoing [IRIS-HEP supported Fellow](https://iris-hep.org/fellows/peterridolfi.html) work to provide conversion support to CMS Combine as of Summer 2022!
 ]
 .kol-1-2[
 <br><br>
