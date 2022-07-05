@@ -506,7 +506,7 @@ brazil.plot_results(poi_vals, results, ax=ax);
 
 .center.width-100[[![try-pyhf](figures/try-pyhf.png)](https://kratsg.github.io/try-pyhf/)]
 
-.center[Software/statistics training, web applications, schemea validation enabled with [Pyodide](https://pyodide.org/en/stable/) and PyScript]
+.center[Software/statistics training, web applications, schemea validation enabled with [Pyodide](https://pyodide.org/en/stable/) and [PyScript](https://pyscript.net/)]
 
 ---
 # Summary
