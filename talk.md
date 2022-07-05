@@ -430,9 +430,8 @@ fig.savefig("upper_limit.pdf")
 ---
 # Browser native ecosystem as of April 2022
 <!--  -->
-<!--  -->
 .kol-1-1[
-.kol-1-2.code-tiny[
+.kol-3-5.tiny[
 ```python
 # one bin example from pyhf v0.6.3 docs
 import pyhf
@@ -458,10 +457,19 @@ fig, ax = plt.subplots()
 fig.set_size_inches(7, 5)
 brazil.plot_results(poi_vals, results, ax=ax);
 ```
-<!--  -->
-.center.width-45[[![pyhf-brazil-band](figures/pyhf-brazil-band.svg)](https://pyhf.readthedocs.io/en/v0.6.3/)]
 ]
-.kol-1-2[
+.kol-2-5[
+<br>
+.center.width-100[[![pyhf-brazil-band](figures/pyhf-brazil-band.svg)](https://pyhf.readthedocs.io/en/v0.6.3/)]
+]
+
+]
+.center.large[One bin example from `pyhf` `v0.6.3` docs]
+
+---
+# Browser native ecosystem as of April 2022
+
+.center.width-100[
 <iframe
    src="https://jupyterlite.github.io/demo/repl/index.html?kernel=python&toolbar=1&code=import%20piplite%0Aawait%20piplite.install%28%5B%22pyhf%3D%3D0.6.3%22%2C%20%22requests%22%5D%29%0A%25matplotlib%20inline%0Aimport%20pyhf"
    width="100%"
@@ -469,7 +477,27 @@ brazil.plot_results(poi_vals, results, ax=ax);
 ></iframe>
 ]
 
-]
+.center[[Pyodide](https://pyodide.org/en/stable/) CPython port to WebAssembly/Emscripten powering [JupyterLite](https://jupyterlite.readthedocs.io/) kernel]
+
+---
+# Browser native ecosystem as of April 2022
+
+.center.width-100[![jupyterlite-piplite-install](figures/jupyterlite-piplite-install.png)]
+
+.center[[Pyodide](https://pyodide.org/en/stable/) CPython port to WebAssembly/Emscripten powering [JupyterLite](https://jupyterlite.readthedocs.io/) kernel]
+
+---
+# Browser native ecosystem as of April 2022
+
+.center.width-100[![jupyterlite-before-eval](figures/jupyterlite-before-eval.png)]
+
+.center[[Pyodide](https://pyodide.org/en/stable/) CPython port to WebAssembly/Emscripten powering [JupyterLite](https://jupyterlite.readthedocs.io/) kernel]
+
+---
+# Browser native ecosystem as of April 2022
+
+.center.width-100[![jupyterlite-upper-limit-plot](figures/jupyterlite-upper-limit-plot.png)]
+
 .center[[Pyodide](https://pyodide.org/en/stable/) CPython port to WebAssembly/Emscripten powering [JupyterLite](https://jupyterlite.readthedocs.io/) kernel]
 
 ---
