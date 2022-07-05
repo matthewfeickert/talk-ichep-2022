@@ -417,9 +417,11 @@ fig.savefig("upper_limit.pdf")
 ---
 # Ongoing work to support CMS Combine
 
-.kol-1-2[
-<br>
-- TODO: Describe Fellow project
+.kol-1-2.large[
+- `pyhf` users in 2022: ATLAS, Belle II, phenomenology community, IRIS-HEP
+- Working [to create a bridge](https://github.com/scikit-hep/pyhf/issues/344) for CMS to use and validate with a converter to [CMS Combine](https://cms-analysis.github.io/HiggsAnalysis-CombinedLimit/)
+   - Difficult as HistFactory is "closed world" of models and CMS Combine is RooFit "open world"
+- IRIS-HEP Fellow Summer 2022 project is ongoing with some promising preliminary results
 ]
 .kol-1-2[
 <br><br>
