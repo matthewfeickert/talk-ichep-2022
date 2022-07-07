@@ -234,7 +234,7 @@ $$
 - As huge buy in from industry we benefit for free as these frameworks are .bold[continually improved] by professional software engineers (physicists are not)
 
 .kol-1-2.center[
-.width-85[![scaling_hardware](figures/scaling_hardware_annotated.png)]
+.width-80[![scaling_hardware](figures/scaling_hardware_annotated.png)]
 ]
 .kol-1-2[
 - Hardware acceleration giving .bold[order of magnitude speedup] in interpolation for systematics!
