@@ -7,11 +7,11 @@ default: decktape
 all: decktape
 
 decktape: talk.md
-	docker run --rm -v ${dir_path}:/slides/ astefanutti/decktape:3.0.0 \
+	docker run --rm -v ${dir_path}:/slides/ astefanutti/decktape:3.4.1 \
 	https://matthewfeickert.github.io/${current_dir}/index.html \
 	talk.pdf
 
 decktape_local: talk.md
-	docker run --rm -t --net=host -v ${dir_path}:/slides astefanutti/decktape:3.0.0 \
+	docker run --rm -t --net=host -v ${dir_path}:/slides astefanutti/decktape:3.4.1 \
 	http://localhost:8001 \
 	localhost_draft.pdf
