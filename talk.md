@@ -505,6 +505,18 @@ brazil.plot_results(poi_vals, results, ax=ax);
 .center[Software/statistics training, web applications, schemea validation enabled with [Pyodide](https://pyodide.org/en/stable/) and [PyScript](https://pyscript.net/)]
 
 ---
+# HEPData support for HistFactory JSON and more
+
+.kol-2-7[
+<br><br><br><br><br><br><br>
+.center.width-100[[![hepdata-histfactory-tweet](figures/hepdata-histfactory-tweet.png)](https://twitter.com/HEPData/status/1529038702344798212)]
+]
+.kol-5-7[
+<br>
+.center.width-100[[![hepdata-histfactory-badge](figures/hepdata-histfactory-badge.png)](https://www.hepdata.net/search/?q=analysis:HistFactory)]
+]
+
+---
 # Summary
 .kol-2-3[
 - .large[Library for modeling and .bold[accelerated] fitting]
@@ -517,10 +529,10 @@ brazil.plot_results(poi_vals, results, ax=ax);
    - JSON Patch files for efficient computation of new signal models
    - Unifying tool for theoretical and experimental physicists
 - .large[Growing use community across .bold[all of HEP]]
+   - Theory and experiment
 - .large[Project in growing .bold[Pythonic HEP ecosystem]]
    - [Openly developed on GitHub](https://github.com/scikit-hep/pyhf) and welcome contributions
    - [Comprehensive open tutorials](https://pyhf.github.io/pyhf-tutorial/)
-   - Ask us about Scikit-HEP and IRIS-HEP!
 ]
 .kol-1-3[
 <br>
