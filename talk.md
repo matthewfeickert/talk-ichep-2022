@@ -426,21 +426,21 @@ brazil.plot_results(poi_vals, results, ax=ax);
 
 .center.width-55[[![try-pyhf](figures/try-pyhf-inspect.png)](https://kratsg.github.io/try-pyhf/)]
 <!--  -->
-.center[Software/statistics training, web applications, schemea validation enabled with [Pyodide](https://pyodide.org/en/stable/) and [PyScript](https://pyscript.net/)]
+.center[Future software/statistics training, web applications, schemea validation enabled with [Pyodide](https://pyodide.org/en/stable/) and [PyScript](https://pyscript.net/)]
 
 ---
 # Enabling full web apps with PyScript
 
 .center.width-55[[![try-pyhf](figures/try-pyhf-compute.png)](https://kratsg.github.io/try-pyhf/)]
 <!--  -->
-.center[Software/statistics training, web applications, schemea validation enabled with [Pyodide](https://pyodide.org/en/stable/) and [PyScript](https://pyscript.net/)]
+.center[Future software/statistics training, web applications, schemea validation enabled with [Pyodide](https://pyodide.org/en/stable/) and [PyScript](https://pyscript.net/)]
 
 ---
 # Enabling full web apps with PyScript
 
 .center.width-55[[![try-pyhf](figures/try-pyhf-plot.png)](https://kratsg.github.io/try-pyhf/)]
 <!--  -->
-.center[Software/statistics training, web applications, schemea validation enabled with [Pyodide](https://pyodide.org/en/stable/) and [PyScript](https://pyscript.net/)]
+.center[Future software/statistics training, web applications, schemea validation enabled with [Pyodide](https://pyodide.org/en/stable/) and [PyScript](https://pyscript.net/)]
 
 ---
 # HEPData support for HistFactory JSON and more
@@ -453,6 +453,8 @@ brazil.plot_results(poi_vals, results, ax=ax);
 <br>
 .center.width-100[[![hepdata-histfactory-badge](figures/hepdata-histfactory-badge.png)](https://www.hepdata.net/search/?q=analysis:HistFactory)]
 ]
+
+.center[Published HistFactory probability models get own DOI (future: model render, interactivity)]
 
 ---
 # Summary
