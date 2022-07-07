@@ -12,7 +12,7 @@ count: false
 
 July 8th, 2022
 
----
+<!-- ---
 # Talk information
 <br><br>
 
@@ -20,7 +20,7 @@ July 8th, 2022
    - .bold[12 minutes] talk
    - .bold[3 minutes] questions
 - .bold[talk upload]: The only accepted formats for the slides are pdf (preferred) or pptx, any other format is strictly
-forbidden. The files must be uploaded to the Indico platform of the conference .bold[before 6 pm of the day before the talk], no other method of submission will be allowed.
+forbidden. The files must be uploaded to the Indico platform of the conference .bold[before 6 pm of the day before the talk], no other method of submission will be allowed. -->
 
 ---
 # `pyhf` team
@@ -360,6 +360,7 @@ fig.savefig("upper_limit.pdf")
 
 ---
 # Large community adoption followed (2020 on)
+<!-- As of 2022-07-07 have 32 use citations -->
 <!-- .center.large.bold[Placeholder slide] -->
 .center[
 .width-95[[![community-adoption](figures/community-adoption.svg)](https://scikit-hep.org/pyhf/citations.html)]
