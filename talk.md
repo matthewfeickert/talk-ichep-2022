@@ -594,7 +594,7 @@ Backup
 ]
 
 ---
-# Likelihoods preserved on HEPData
+# Probability models reserved on HEPData
 
 - `pyhf` pallet:
    - Background-only model JSON stored
@@ -620,6 +620,38 @@ Backup
    - with own DOI! .width-20[[![DOI](https://img.shields.io/badge/DOI-10.17182%2Fhepdata.90607.v3%2Fr3-blue.svg)](https://doi.org/10.17182/hepdata.90607.v3/r3)]
 
 .center.width-90[![HEPData_streamed_likelihoods](figures/carbon_patchset_example.png)]
+
+---
+# API Example: Hypothesis test
+
+.smaller[
+```console
+$ python -m pip install pyhf[jax,contrib]
+$ pyhf contrib download https://doi.org/10.17182/hepdata.90607.v3/r3 1Lbb-pallet
+```
+```python
+import json
+import pyhf
+
+pyhf.set_backend("jax")  # Optional for speed
+spec = json.load(open("1Lbb-pallet/BkgOnly.json"))
+patchset = pyhf.PatchSet(json.load(open("1Lbb-pallet/patchset.json")))
+
+workspace = pyhf.Workspace(spec)
+model = workspace.model(patches=[patchset["C1N2_Wh_hbb_900_250"]])
+
+test_poi = 1.0
+data = workspace.data(model)
+cls_obs, cls_exp_band = pyhf.infer.hypotest(
+    test_poi, data, model, test_stat="qtilde", return_expected_set=True
+)
+print(f"Observed CLs: {cls_obs}")
+# Observed CLs: 0.4573416902360917
+print(f"Expected CLs band: {[exp.tolist() for exp in cls_exp_band]}")
+# Expected CLs band: [0.014838293214187472, 0.05174259485911152,
+# 0.16166970886709053, 0.4097850957724176, 0.7428200727035176]
+```
+]
 
 ---
 # Python API Example: Upper limit
@@ -737,21 +769,6 @@ cabinetry.visualize.data_mc(postfit_model, data)
 ]
 
 ---
-# Ongoing work to interface CMS Combine
-
-.kol-1-2.large[
-- `pyhf` users in 2022: ATLAS, Belle II, phenomenology community, IRIS-HEP
-- Working [to create a bridge](https://github.com/scikit-hep/pyhf/issues/344) for CMS to use and validate with a converter to [CMS Combine](https://cms-analysis.github.io/HiggsAnalysis-CombinedLimit/)
-   - Difficult as HistFactory is "closed world" of models and CMS Combine is RooFit "open world"
-- IRIS-HEP Fellow Summer 2022 project is ongoing with some promising preliminary results
-]
-.kol-1-2[
-<br><br>
-.center.width-100[[![IRIS-HEP-fellow-position](figures/IRIS-HEP-fellow-position.png)](https://iris-hep.org/fellow_projects.html)]
-.center.smaller[[.bold[A pyhf converter for binned likelihood models in CMS Combine]](https://iris-hep.org/fellow_projects.html)]
-]
-
----
 # ...and by theory
 
 .kol-1-3[
@@ -765,42 +782,25 @@ cabinetry.visualize.data_mc(postfit_model, data)
 ]
 .kol-2-3[
 .center.width-100[[![sabine_workshop_slide](figures/sabine_workshop_slide.png)](https://inspirehep.net/literature/1814793)]
-.center.smaller[[Feedback on use of public Likelihoods](https://indico.cern.ch/event/957797/contributions/4026032/), Sabine Kraml<br>(ATLAS Exotics + SUSY Reinterpretations Workshop)]
+.center.smaller[[Feedback on use of public probability models](https://indico.cern.ch/event/957797/contributions/4026032/), Sabine Kraml<br>(ATLAS Exotics + SUSY Reinterpretations Workshop)]
 <!--  -->
 ]
 - Have produced three comparisons to published ATLAS likelihoods: [ATLAS-SUSY-2018-04](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/), [ATLAS-SUSY-2018-31](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-31/), [ATLAS-SUSY-2019-08](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2019-08/)
    - Compare simplified likelihood (bestSR) to full likelihood (`pyhf`) using `SModelS`
 
 ---
-# Run Example: Hypothesis test
+# Ongoing work to interface CMS Combine
 
-.smaller[
-```console
-$ python -m pip install pyhf[jax,contrib]
-$ pyhf contrib download https://doi.org/10.17182/hepdata.90607.v3/r3 1Lbb-pallet
-```
-```python
-import json
-import pyhf
-
-pyhf.set_backend("jax")  # Optional for speed
-spec = json.load(open("1Lbb-pallet/BkgOnly.json"))
-patchset = pyhf.PatchSet(json.load(open("1Lbb-pallet/patchset.json")))
-
-workspace = pyhf.Workspace(spec)
-model = workspace.model(patches=[patchset["C1N2_Wh_hbb_900_250"]])
-
-test_poi = 1.0
-data = workspace.data(model)
-cls_obs, cls_exp_band = pyhf.infer.hypotest(
-    test_poi, data, model, test_stat="qtilde", return_expected_set=True
-)
-print(f"Observed CLs: {cls_obs}")
-# Observed CLs: 0.4573416902360917
-print(f"Expected CLs band: {[exp.tolist() for exp in cls_exp_band]}")
-# Expected CLs band: [0.014838293214187472, 0.05174259485911152,
-# 0.16166970886709053, 0.4097850957724176, 0.7428200727035176]
-```
+.kol-1-2.large[
+- `pyhf` users in 2022: ATLAS, Belle II, phenomenology community, IRIS-HEP
+- Working [to create a bridge](https://github.com/scikit-hep/pyhf/issues/344) for CMS to use and validate with a converter to [CMS Combine](https://cms-analysis.github.io/HiggsAnalysis-CombinedLimit/)
+   - Difficult as HistFactory is "closed world" of models and CMS Combine is RooFit "open world"
+- IRIS-HEP Fellow Summer 2022 project is ongoing with some promising preliminary results
+]
+.kol-1-2[
+<br><br>
+.center.width-100[[![IRIS-HEP-fellow-position](figures/IRIS-HEP-fellow-position.png)](https://iris-hep.org/fellow_projects.html)]
+.center.smaller[[.bold[A pyhf converter for binned likelihood models in CMS Combine]](https://iris-hep.org/fellow_projects.html)]
 ]
 
 ---
