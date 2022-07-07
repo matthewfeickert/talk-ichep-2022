@@ -147,6 +147,10 @@ $$
    - encode systematic uncertainties (e.g. normalization, shape)
 - .red[Constraint p.d.f. (+ data) for "auxiliary measurements"]
 
+<!-- So HistFactory gives us a concise mathematical grammar for simultaneous fits across all channels
+(which are analysis regions) and bins, with systematic uncertanties that modify the Poisson event rate,
+which are coupled to sets of constraint terms.
+ -->
 ---
 # HistFactory Template: grammar
 
