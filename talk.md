@@ -94,7 +94,7 @@ Provide constraints on models through setting best limits
 ]
 .kol-3-5.center[
 .width-100[[![SUSY-2016-16](figures/SUSY-2016-16.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-16/)]
-.bold[Beyond the Standard Model]
+<br>.bold[Beyond the Standard Model]
 ]
 
 ---
@@ -237,11 +237,10 @@ $$
 .width-90[![scaling_hardware](figures/scaling_hardware_annotated.png)]
 ]
 .kol-1-2[
-<br>
-- .bold[TODO: NEED TO REVISE THIS GIVEN CURRENT DISCUSSIONS]
-- Show hardware acceleration giving .bold[order of magnitude speedup] for some models!
-- Improvements over traditional
-   - 10 hrs to 30 min; 20 min to 10 sec
+- Hardware acceleration giving .bold[order of magnitude speedup] in interpolation for systematics!
+   - does suffer some overhead
+- Noticeable impact for large and complex models
+   - hours to minutes for fits
 ]
 ]
 .kol-1-4.center[
