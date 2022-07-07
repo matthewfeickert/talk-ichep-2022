@@ -210,10 +210,10 @@ $$
 - First non-ROOT implementation of the HistFactory p.d.f. template
    - .width-40[[![DOI](figures/zenodo.1169739.svg)](https://doi.org/10.5281/zenodo.1169739)]
 - pure-Python library as second implementation of HistFactory
-  - [`$ python -m pip install pyhf`](https://scikit-hep.org/pyhf/installation.html#install-from-pypi)
+  - [`$ python -m pip install --pre pyhf`](https://scikit-hep.org/pyhf/installation.html#install-from-pypi)
   - No dependence on ROOT!
 
-.center.width-100[[![pyhf_PyPI](figures/pyhf_PyPI_rc.png)](https://pypi.org/project/pyhf/)]
+.center.width-100[[![pyhf_PyPI](figures/pyhf_PyPI_rc.png)](https://pypi.org/project/pyhf/0.7.0rc1/)]
 ]
 .kol-1-2.large[
 - Open source tool for all of HEP
