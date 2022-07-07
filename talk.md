@@ -709,7 +709,7 @@ cabinetry.visualize.data_mc(postfit_model, data)
 # Rapid adoption in ATLAS...
 <!--  -->
 .kol-1-3[
-- **18** ATLAS SUSY, Exotics, Top analyses with full probability models published to HEPData
+- **22** ATLAS SUSY, Exotics, Top analyses with full probability models published to HEPData
 - ATLAS SUSY will be continuing to publish full Run 2 likelihoods
 ]
 .kol-2-3[
