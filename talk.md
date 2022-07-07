@@ -507,7 +507,7 @@ brazil.plot_results(poi_vals, results, ax=ax);
 ---
 # Summary
 .kol-2-3[
-- .large[.bold[Accelerated] fitting library]
+- .large[Library for modeling and .bold[accelerated] fitting]
    - reducing time to insight/inference!
    - Hardware acceleration on GPUs and vectorized operations
    - Backend agnostic Python API and CLI
@@ -516,6 +516,7 @@ brazil.plot_results(poi_vals, results, ax=ax);
 - .large[Enabling technology for .bold[reinterpretation]]
    - JSON Patch files for efficient computation of new signal models
    - Unifying tool for theoretical and experimental physicists
+- Growing use community across .bold[all of HEP]
 - .large[Project in growing .bold[Pythonic HEP ecosystem]]
    - [Openly developed on GitHub](https://github.com/scikit-hep/pyhf) and welcome contributions
    - [Comprehensive open tutorials](https://pyhf.github.io/pyhf-tutorial/)
