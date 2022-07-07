@@ -348,21 +348,6 @@ $$
 - .large[An enabling technology for .bold[reinterpretation]] (`pyhf` + RECAST)
 
 ---
-# Ongoing work to support CMS Combine
-
-.kol-1-2.large[
-- `pyhf` users in 2022: ATLAS, Belle II, phenomenology community, IRIS-HEP
-- Working [to create a bridge](https://github.com/scikit-hep/pyhf/issues/344) for CMS to use and validate with a converter to [CMS Combine](https://cms-analysis.github.io/HiggsAnalysis-CombinedLimit/)
-   - Difficult as HistFactory is "closed world" of models and CMS Combine is RooFit "open world"
-- IRIS-HEP Fellow Summer 2022 project is ongoing with some promising preliminary results
-]
-.kol-1-2[
-<br><br>
-.center.width-100[[![sabine_workshop_slide](figures/IRIS-HEP-fellow-position.png)](https://iris-hep.org/fellow_projects.html)]
-.center.smaller[[.bold[A pyhf converter for binned likelihood models in CMS Combine]](https://iris-hep.org/fellow_projects.html)]
-]
-
----
 # Browser native ecosystem as of April 2022
 <!--  -->
 .kol-1-1[
@@ -749,6 +734,21 @@ cabinetry.visualize.data_mc(postfit_model, data)
 ]
 ]
 .center.smaller[SUSY [EWK 3L RPV](https://atlas.cern/updates/physics-briefing/fantastic-decays-and-where-find-them) analysis ([ATLAS-CONF-2020-009](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2020-009/)): Exclusion curves as a function of mass and branching fraction to $Z$ bosons]
+]
+
+---
+# Ongoing work to interface CMS Combine
+
+.kol-1-2.large[
+- `pyhf` users in 2022: ATLAS, Belle II, phenomenology community, IRIS-HEP
+- Working [to create a bridge](https://github.com/scikit-hep/pyhf/issues/344) for CMS to use and validate with a converter to [CMS Combine](https://cms-analysis.github.io/HiggsAnalysis-CombinedLimit/)
+   - Difficult as HistFactory is "closed world" of models and CMS Combine is RooFit "open world"
+- IRIS-HEP Fellow Summer 2022 project is ongoing with some promising preliminary results
+]
+.kol-1-2[
+<br><br>
+.center.width-100[[![IRIS-HEP-fellow-position](figures/IRIS-HEP-fellow-position.png)](https://iris-hep.org/fellow_projects.html)]
+.center.smaller[[.bold[A pyhf converter for binned likelihood models in CMS Combine]](https://iris-hep.org/fellow_projects.html)]
 ]
 
 ---
