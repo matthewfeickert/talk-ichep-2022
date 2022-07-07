@@ -12,7 +12,7 @@ count: false
 
 July 8th, 2022
 
----
+<!-- ---
 # Talk information
 <br><br>
 
@@ -20,7 +20,7 @@ July 8th, 2022
    - .bold[12 minutes] talk
    - .bold[3 minutes] questions
 - .bold[talk upload]: The only accepted formats for the slides are pdf (preferred) or pptx, any other format is strictly
-forbidden. The files must be uploaded to the Indico platform of the conference .bold[before 6 pm of the day before the talk], no other method of submission will be allowed.
+forbidden. The files must be uploaded to the Indico platform of the conference .bold[before 6 pm of the day before the talk], no other method of submission will be allowed. -->
 
 ---
 # `pyhf` team
@@ -33,7 +33,7 @@ forbidden. The files must be uploaded to the Indico platform of the conference .
 
 [Lukas Heinrich](https://github.com/lukasheinrich)
 
-Technical University Munich
+Technical University of Munich
 ]
 .kol-1-3.center[
 .circle.width-80[![Matthew](https://avatars2.githubusercontent.com/u/5142394)]
@@ -44,7 +44,7 @@ University of Wisconsin-Madison<br>
 (Illinois for work presented today)
 ]
 .kol-1-3.center[
-.circle.width-75[![Giordon](figures/collaborators/stark.png)]
+.circle.width-75[![Giordon](figures/collaborators/stark.jpg)]
 
 [Giordon Stark](https://github.com/kratsg)
 
@@ -86,7 +86,7 @@ Provide constraints on models through setting best limits
 
 - A flexible probability density function (p.d.f.) template to build statistical models in high energy physics
 - Developed in 2011 during work that lead to the Higgs discovery [[CERN-OPEN-2012-016](http://inspirehep.net/record/1236448)]
-- Widely used by ATLAS for .bold[measurements of known physics] (Standard Model) and .bold[searches for new physics] (beyond the Standard Model)
+- Widely used by ATLAS for .bold[measurements of known physics] and .bold[searches for new physics]
 
 .kol-2-5.center[
 .width-90[[![HIGG-2016-25](figures/HIGG-2016-25.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/HIGG-2016-25/)]
@@ -94,7 +94,7 @@ Provide constraints on models through setting best limits
 ]
 .kol-3-5.center[
 .width-100[[![SUSY-2016-16](figures/SUSY-2016-16.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-16/)]
-.bold[Beyond the Standard Model]
+<br>.bold[Beyond the Standard Model]
 ]
 
 ---
@@ -148,26 +148,6 @@ $$
 - .red[Constraint p.d.f. (+ data) for "auxiliary measurements"]
 
 ---
-# HistFactory Template: systematic uncertainties
-
-.kol-4-7[
-- In HEP common for systematic uncertainties to be specified with two template histograms: "up" and "down" variation for parameter $\theta \in \\{\textcolor{#0495fc}{\vec{\eta}}, \textcolor{#9c2cfc}{\vec{\chi}} \\}$
-   - "up" variation: model prediction for $\theta = +1$
-   - "down" variation: model prediction for $\theta = -1$
-   - Interpolation and extrapolation choices provide .bold[model predictions $\nu(\vec{\theta}\,)$ for any $\vec{\theta}$]
-<!--  -->
-- [Constraint terms](https://pyhf.readthedocs.io/en/v0.6.3/intro.html#id25) $c\_{j} \left(\textcolor{#a3130f}{a\_{j}}\middle|\textcolor{#9c2cfc}{\theta_{j}}\right)$ used to model auxiliary measurements. Example for Normal (most common case):
-   - Mean of nuisance parameter $\textcolor{#9c2cfc}{\theta_{j}}$ with normalized width ($\sigma=1$)
-   - Normal: auxiliary data $\textcolor{#a3130f}{a\_{j} = 0}$ (aux data function of modifier type)
-   - Constraint term produces penalty in likelihood for pulling $\textcolor{#9c2cfc}{\theta_{j}}$ away from auxiliary measurement value
-   - As $\nu(\vec{\theta}\,)$ constraint terms inform rate modifiers (.bold[systematic uncertainties]) during simultaneous fit
-]
-.kol-3-7[
-.center.width-70[[![systematics](figures/systematics.png)](https://indico.cern.ch/event/1076231/contributions/4560405/)]
-.center[Image credit: [Alex Held](https://indico.cern.ch/event/1076231/contributions/4560405/)]
-]
-
----
 # HistFactory Template: grammar
 
 $$
@@ -201,27 +181,47 @@ $$
 
 .center.width-70[[![ROOT_HistFactory](figures/ROOT_HistFactory.png)](https://root.cern/doc/v624/group__HistFactory.html)]
 
-
 ---
 # `pyhf`: HistFactory in pure Python
 <!--  -->
-.kol-1-2[
+.kol-1-2.large[
 - First non-ROOT implementation of the HistFactory p.d.f. template
-   - .width-40[[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1169739.svg)](https://doi.org/10.5281/zenodo.1169739)]
+   - .width-40[[![DOI](figures/zenodo.1169739.svg)](https://doi.org/10.5281/zenodo.1169739)]
 - pure-Python library as second implementation of HistFactory
   - [`$ python -m pip install pyhf`](https://scikit-hep.org/pyhf/installation.html#install-from-pypi)
   - No dependence on ROOT!
+
+.center.width-100[[![pyhf_PyPI](figures/pyhf_PyPI.png)](https://pypi.org/project/pyhf/)]
+]
+.kol-1-2.large[
 - Open source tool for all of HEP
    - [IRIS-HEP](https://iris-hep.org/projects/pyhf.html) supported Scikit-HEP project
-   - Used in ATLAS SUSY, Exotics, and Top groups in [18 published analyses](https://scikit-hep.org/pyhf/citations.html#published-statistical-models)
-   - Used by Belle II (DOI: [10.1103/PhysRevLett.127.181802](https://inspirehep.net/literature/1860766))
-   - Used for reinterpretation in phenomenology paper (DOI: [10.1007/JHEP04(2019)144](https://inspirehep.net/record/1698425)) and `SModelS` <br>(DOI: [10.1016/j.cpc.2021.107909](https://inspirehep.net/literature/1814793))
-   - Ongoing work to make a bridge to CMS as of Summer 2022!
+   - Used in ATLAS SUSY, Exotics, and Top groups in [22 published analyses](https://scikit-hep.org/pyhf/citations.html#published-statistical-models) (inference and published models)
+   - Used by Belle II<br>(DOI: [10.1103/PhysRevLett.127.181802](https://inspirehep.net/literature/1860766))
+   - Used in [analyses and for reinterpretation](https://scikit-hep.org/pyhf/citations.html#use-citations) by phenomenology community, `SModelS` <br>(DOI: [10.1016/j.cpc.2021.107909](https://inspirehep.net/literature/1814793)), and `MadAnalysis 5` ([arXiv:2206.14870](https://inspirehep.net/literature/2103971))
+   - Ongoing [IRIS-HEP supported Fellow](https://iris-hep.org/fellows/peterridolfi.html) work to provide conversion support to CMS Combine as of Summer 2022!
 ]
-.kol-1-2[
-<br><br>
-.center.width-100[[![pyhf_PyPI](figures/pyhf_PyPI.png)](https://pypi.org/project/pyhf/)]
-.center.width-60[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://scikit-hep.org/pyhf/)]
+
+<!-- Same slide but with release candidate shown -->
+---
+# `pyhf`: HistFactory in pure Python
+<!--  -->
+.kol-1-2.large[
+- First non-ROOT implementation of the HistFactory p.d.f. template
+   - .width-40[[![DOI](figures/zenodo.1169739.svg)](https://doi.org/10.5281/zenodo.1169739)]
+- pure-Python library as second implementation of HistFactory
+  - [`$ python -m pip install --pre pyhf`](https://scikit-hep.org/pyhf/installation.html#install-from-pypi)
+  - No dependence on ROOT!
+
+.center.width-100[[![pyhf_PyPI](figures/pyhf_PyPI_rc.png)](https://pypi.org/project/pyhf/0.7.0rc1/)]
+]
+.kol-1-2.large[
+- Open source tool for all of HEP
+   - [IRIS-HEP](https://iris-hep.org/projects/pyhf.html) supported Scikit-HEP project
+   - Used in ATLAS SUSY, Exotics, and Top groups in [22 published analyses](https://scikit-hep.org/pyhf/citations.html#published-statistical-models) (inference and published models)
+   - Used by Belle II<br>(DOI: [10.1103/PhysRevLett.127.181802](https://inspirehep.net/literature/1860766))
+   - Used in [analyses and for reinterpretation](https://scikit-hep.org/pyhf/citations.html#use-citations) by phenomenology community, `SModelS` <br>(DOI: [10.1016/j.cpc.2021.107909](https://inspirehep.net/literature/1814793)), and `MadAnalysis 5` ([arXiv:2206.14870](https://inspirehep.net/literature/2103971))
+   - Ongoing [IRIS-HEP supported Fellow](https://iris-hep.org/fellows/peterridolfi.html) work to provide conversion support to CMS Combine as of Summer 2022!
 ]
 
 ---
@@ -234,14 +234,13 @@ $$
 - As huge buy in from industry we benefit for free as these frameworks are .bold[continually improved] by professional software engineers (physicists are not)
 
 .kol-1-2.center[
-.width-90[![scaling_hardware](figures/scaling_hardware_annotated.png)]
+.width-80[![scaling_hardware](figures/scaling_hardware_annotated.png)]
 ]
 .kol-1-2[
-<br>
-- .bold[TODO: NEED TO REVISE THIS GIVEN CURRENT DISCUSSIONS]
-- Show hardware acceleration giving .bold[order of magnitude speedup] for some models!
-- Improvements over traditional
-   - 10 hrs to 30 min; 20 min to 10 sec
+- Hardware acceleration giving .bold[order of magnitude speedup] in interpolation for systematics!
+   - does suffer some overhead
+- Noticeable impact for large and complex models
+   - hours to minutes for fits
 ]
 ]
 .kol-1-4.center[
@@ -297,7 +296,7 @@ $$
 ]
 
 ---
-# ATLAS validation and publication of likelihoods
+# ATLAS validation and publication of models
 
 .kol-1-2[
 .center.width-100[[![ATLAS_PUB_Note_title](figures/ATLAS_PUB_Note_title.png)](https://cds.cern.ch/record/2684863)]
@@ -314,11 +313,11 @@ $$
 
 ---
 # Large community adoption followed (2020 on)
+<!-- As of 2022-07-07 have 32 use citations -->
 <!-- .center.large.bold[Placeholder slide] -->
 .center[
 .width-95[[![community-adoption](figures/community-adoption.svg)](https://scikit-hep.org/pyhf/citations.html)]
 ]
-
 
 ---
 # Extending and visualization: cabinetry
@@ -335,96 +334,7 @@ $$
 .center.width-50[[![cabinetry_logo](figures/cabinetry_logo_small.png)](https://github.com/scikit-hep/cabinetry)]
 .center.width-100[[![cabinetry_plots](figures/cabinetry_plots.png)](https://indico.cern.ch/event/1056428/contributions/4523825/)]
 
-.center[Alex Held, [ATLAS SUSY Workshop 2021](https://indico.cern.ch/event/1056428/contributions/4523825/)]
-]
-
----
-# Run Example: Upper limit
-
-.kol-3-5[
-.tiny[
-```console
-$ python -m pip install pyhf[jax,contrib]
-$ pyhf contrib download https://doi.org/10.17182/hepdata.90607.v3/r3 1Lbb-pallet
-```
-```python
-import json
-import matplotlib.pyplot as plt
-import numpy as np
-import pyhf
-from pyhf.contrib.viz.brazil import plot_results
-
-pyhf.set_backend("jax")  # Optional for speed
-
-spec = json.load(open("1Lbb-pallet/BkgOnly.json"))
-patchset = pyhf.PatchSet(json.load(open("1Lbb-pallet/patchset.json")))
-
-workspace = pyhf.Workspace(spec)
-model = workspace.model(patches=[patchset["C1N2_Wh_hbb_900_250"]])
-
-test_pois = np.linspace(0, 5, 41)  # POI step of 0.125
-data = workspace.data(model)
-obs_limit, exp_limits, (test_pois, results) = pyhf.infer.intervals.upperlimit(
-    data, model, test_pois, return_results=True
-)
-
-print(f"Observed limit: {obs_limit}")
-# Observed limit: 2.547958147632675
-print(f"Expected limits: {[limit.tolist() for limit in exp_limits]}")
-# Expected limits: [0.7065311975182036, 1.0136453820160332,
-# 1.5766626372587724, 2.558234487679955, 4.105381941514062]
-
-fig, ax = plt.subplots()
-artists = plot_results(test_pois, results, ax=ax)
-fig.savefig("upper_limit.pdf")
-```
-]
-]
-<br><br>
-.kol-2-5[
-.center.width-100[![upper_limit](figures/upper_limit.png)]
-]
-
----
-# Run Example: Extend with cabinetry
-.kol-5-7[
-.tiny[
-```python
-import json
-import cabinetry
-import pyhf
-from cabinetry.model_utils import prediction
-from pyhf.contrib.utils import download
-
-# download the ATLAS bottom-squarks analysis probability models from HEPData
-download("https://www.hepdata.net/record/resource/1935437?view=true", "bottom-squarks")
-
-# construct a workspace from a background-only model and a signal hypothesis
-bkg_only_workspace = pyhf.Workspace(
-    json.load(open("bottom-squarks/RegionC/BkgOnly.json"))
-)
-patchset = pyhf.PatchSet(json.load(open("bottom-squarks/RegionC/patchset.json")))
-workspace = patchset.apply(bkg_only_workspace, "sbottom_600_280_150")
-
-# construct the probability model and observations
-model, data = cabinetry.model_utils.model_and_data(workspace)
-
-# produce visualizations of the pre-fit model and observed data
-prefit_model = prediction(model)
-cabinetry.visualize.data_mc(prefit_model, data)
-
-# fit the model to the observed data
-fit_results = cabinetry.fit.fit(model, data)
-
-# produce visualizations of the post-fit model and observed data
-postfit_model = prediction(model, fit_results=fit_results)
-cabinetry.visualize.data_mc(postfit_model, data)
-```
-]
-]
-.kol-2-7.center[
-.center.width-90[![cabinetry_SR_metsigST_prefit](figures/cabinetry_SR_metsigST_prefit.png)]
-.center.width-90[![cabinetry_SR_metsigST_postfit](figures/cabinetry_SR_metsigST_postfit.png)]
+.center[Alexander Held, [ATLAS SUSY Workshop 2021](https://indico.cern.ch/event/1056428/contributions/4523825/)]
 ]
 
 ---
@@ -433,58 +343,14 @@ cabinetry.visualize.data_mc(postfit_model, data)
 .width-65[[![analysis-systems-scope](figures/ecosystem.png)](https://iris-hep.org/as.html)]
 ]
 - .large[Analysis Systems pipeline: deployable stack of experiment agnostic infrastructure]
-   - c.f. demonstration at [IRIS-HEP Analysis Grand Challenge Tools Workshop 2021](https://indico.cern.ch/event/1076231/contributions/4560405/)
+   - c.f. demonstration at [IRIS-HEP Analysis Grand Challenge Tools Workshop 2022](https://indico.cern.ch/event/1126109/contributions/4780156/)
 - .large[Accelerating fitting (reducing time to .bold[insight] (statistical inference)!)] (`pyhf` + `cabinetry`)
 - .large[An enabling technology for .bold[reinterpretation]] (`pyhf` + RECAST)
 
 ---
-# Ongoing work to support CMS Combine
-
-.kol-1-2[
-<br>
-- TODO: Describe Fellow project
-]
-.kol-1-2[
-<br><br>
-.center.width-100[[![sabine_workshop_slide](figures/IRIS-HEP-fellow-position.png)](https://iris-hep.org/fellow_projects.html)]
-.center.smaller[[.bold[A pyhf converter for binned likelihood models in CMS Combine]](https://iris-hep.org/fellow_projects.html)]
-]
-
----
 # Browser native ecosystem as of April 2022
-<!--  -->
-<!--  -->
-.kol-1-1[
-.kol-1-2.code-tiny[
-```python
-# one bin example from pyhf v0.6.3 docs
-import pyhf
-import numpy as np
-import matplotlib.pyplot as plt
-from pyhf.contrib.viz import brazil
 
-pyhf.set_backend("numpy")
-model = pyhf.simplemodels.uncorrelated_background(
-    signal=[10.0], bkg=[50.0], bkg_uncertainty=[7.0]
-)
-data = [55.0] + model.config.auxdata
-
-poi_vals = np.linspace(0, 5, 41)
-results = [
-    pyhf.infer.hypotest(
-        test_poi, data, model, test_stat="qtilde", return_expected_set=True
-    )
-    for test_poi in poi_vals
-]
-
-fig, ax = plt.subplots()
-fig.set_size_inches(7, 5)
-brazil.plot_results(poi_vals, results, ax=ax);
-```
-<!--  -->
-.center.width-45[[![pyhf-brazil-band](figures/pyhf-brazil-band.svg)](https://pyhf.readthedocs.io/en/v0.6.3/)]
-]
-.kol-1-2[
+.center.width-100[
 <iframe
    src="https://jupyterlite.github.io/demo/repl/index.html?kernel=python&toolbar=1&code=import%20piplite%0Aawait%20piplite.install%28%5B%22pyhf%3D%3D0.6.3%22%2C%20%22requests%22%5D%29%0A%25matplotlib%20inline%0Aimport%20pyhf"
    width="100%"
@@ -492,13 +358,69 @@ brazil.plot_results(poi_vals, results, ax=ax);
 ></iframe>
 ]
 
-]
 .center[[Pyodide](https://pyodide.org/en/stable/) CPython port to WebAssembly/Emscripten powering [JupyterLite](https://jupyterlite.readthedocs.io/) kernel]
+
+---
+# Browser native ecosystem as of April 2022
+
+.center.width-100[![jupyterlite-piplite-install](figures/jupyterlite-piplite-install.png)]
+
+.center[[Pyodide](https://pyodide.org/en/stable/) CPython port to WebAssembly/Emscripten powering [JupyterLite](https://jupyterlite.readthedocs.io/) kernel]
+
+---
+# Browser native ecosystem as of April 2022
+
+.center.width-100[![jupyterlite-before-eval](figures/jupyterlite-before-eval.png)]
+
+.center[[Pyodide](https://pyodide.org/en/stable/) CPython port to WebAssembly/Emscripten powering [JupyterLite](https://jupyterlite.readthedocs.io/) kernel]
+
+---
+# Browser native ecosystem as of April 2022
+
+.center.width-100[![jupyterlite-upper-limit-plot](figures/jupyterlite-upper-limit-plot.png)]
+
+.center[[Pyodide](https://pyodide.org/en/stable/) CPython port to WebAssembly/Emscripten powering [JupyterLite](https://jupyterlite.readthedocs.io/) kernel]
+
+<!-- try-pyhf slide -->
+---
+# Enabling full web apps with PyScript
+
+.center.width-55[[![try-pyhf](figures/try-pyhf-inspect.png)](https://kratsg.github.io/try-pyhf/)]
+<!--  -->
+.center[Future software/statistics training, web applications, schemea validation enabled with [Pyodide](https://pyodide.org/en/stable/) and [PyScript](https://pyscript.net/)]
+
+---
+# Enabling full web apps with PyScript
+
+.center.width-55[[![try-pyhf](figures/try-pyhf-compute.png)](https://kratsg.github.io/try-pyhf/)]
+<!--  -->
+.center[Future software/statistics training, web applications, schemea validation enabled with [Pyodide](https://pyodide.org/en/stable/) and [PyScript](https://pyscript.net/)]
+
+---
+# Enabling full web apps with PyScript
+
+.center.width-55[[![try-pyhf](figures/try-pyhf-plot.png)](https://kratsg.github.io/try-pyhf/)]
+<!--  -->
+.center[Future software/statistics training, web applications, schemea validation enabled with [Pyodide](https://pyodide.org/en/stable/) and [PyScript](https://pyscript.net/)]
+
+---
+# HEPData support for HistFactory JSON and more
+
+.kol-2-7[
+<br><br><br><br><br><br><br>
+.center.width-100[[![hepdata-histfactory-tweet](figures/hepdata-histfactory-tweet.png)](https://twitter.com/HEPData/status/1529038702344798212)]
+]
+.kol-5-7[
+<br>
+.center.width-100[[![hepdata-histfactory-badge](figures/hepdata-histfactory-badge.png)](https://www.hepdata.net/search/?q=analysis:HistFactory)]
+]
+
+.center[Published HistFactory probability models get own DOI (future: model render, interactivity)]
 
 ---
 # Summary
 .kol-2-3[
-- .large[.bold[Accelerated] fitting library]
+- .large[Library for modeling and .bold[accelerated] fitting]
    - reducing time to insight/inference!
    - Hardware acceleration on GPUs and vectorized operations
    - Backend agnostic Python API and CLI
@@ -507,10 +429,11 @@ brazil.plot_results(poi_vals, results, ax=ax);
 - .large[Enabling technology for .bold[reinterpretation]]
    - JSON Patch files for efficient computation of new signal models
    - Unifying tool for theoretical and experimental physicists
+- .large[Growing use community across .bold[all of HEP]]
+   - Theory and experiment
 - .large[Project in growing .bold[Pythonic HEP ecosystem]]
    - [Openly developed on GitHub](https://github.com/scikit-hep/pyhf) and welcome contributions
    - [Comprehensive open tutorials](https://pyhf.github.io/pyhf-tutorial/)
-   - Ask us about Scikit-HEP and IRIS-HEP!
 ]
 .kol-1-3[
 <br>
@@ -568,6 +491,26 @@ Backup
 ]
 
 ---
+# HistFactory Template: systematic uncertainties
+
+.kol-4-7[
+- In HEP common for systematic uncertainties to be specified with two template histograms: "up" and "down" variation for parameter $\theta \in \\{\textcolor{#0495fc}{\vec{\eta}}, \textcolor{#9c2cfc}{\vec{\chi}} \\}$
+   - "up" variation: model prediction for $\theta = +1$
+   - "down" variation: model prediction for $\theta = -1$
+   - Interpolation and extrapolation choices provide .bold[model predictions $\nu(\vec{\theta}\,)$ for any $\vec{\theta}$]
+<!--  -->
+- [Constraint terms](https://pyhf.readthedocs.io/en/v0.6.3/intro.html#id25) $c\_{j} \left(\textcolor{#a3130f}{a\_{j}}\middle|\textcolor{#9c2cfc}{\theta_{j}}\right)$ used to model auxiliary measurements. Example for Normal (most common case):
+   - Mean of nuisance parameter $\textcolor{#9c2cfc}{\theta_{j}}$ with normalized width ($\sigma=1$)
+   - Normal: auxiliary data $\textcolor{#a3130f}{a\_{j} = 0}$ (aux data function of modifier type)
+   - Constraint term produces penalty in likelihood for pulling $\textcolor{#9c2cfc}{\theta_{j}}$ away from auxiliary measurement value
+   - As $\nu(\vec{\theta}\,)$ constraint terms inform rate modifiers (.bold[systematic uncertainties]) during simultaneous fit
+]
+.kol-3-7[
+.center.width-70[[![systematics](figures/systematics.png)](https://indico.cern.ch/event/1076231/contributions/4560405/)]
+.center[Image credit: [Alexander Held](https://indico.cern.ch/event/1076231/contributions/4560405/)]
+]
+
+---
 # Full likelihood serialization...
 
 .center[...making good on [19 year old agreement to publish likelihoods](https://indico.cern.ch/event/746178/contributions/3396797/)]
@@ -614,7 +557,7 @@ Backup
 ]
 
 ---
-# Likelihoods preserved on HEPData
+# Probability models reserved on HEPData
 
 - `pyhf` pallet:
    - Background-only model JSON stored
@@ -642,10 +585,131 @@ Backup
 .center.width-90[![HEPData_streamed_likelihoods](figures/carbon_patchset_example.png)]
 
 ---
+# API Example: Hypothesis test
+
+.smaller[
+```console
+$ python -m pip install pyhf[jax,contrib]
+$ pyhf contrib download https://doi.org/10.17182/hepdata.90607.v3/r3 1Lbb-pallet
+```
+```python
+import json
+import pyhf
+
+pyhf.set_backend("jax")  # Optional for speed
+spec = json.load(open("1Lbb-pallet/BkgOnly.json"))
+patchset = pyhf.PatchSet(json.load(open("1Lbb-pallet/patchset.json")))
+
+workspace = pyhf.Workspace(spec)
+model = workspace.model(patches=[patchset["C1N2_Wh_hbb_900_250"]])
+
+test_poi = 1.0
+data = workspace.data(model)
+cls_obs, cls_exp_band = pyhf.infer.hypotest(
+    test_poi, data, model, test_stat="qtilde", return_expected_set=True
+)
+print(f"Observed CLs: {cls_obs}")
+# Observed CLs: 0.4573416902360917
+print(f"Expected CLs band: {[exp.tolist() for exp in cls_exp_band]}")
+# Expected CLs band: [0.014838293214187472, 0.05174259485911152,
+# 0.16166970886709053, 0.4097850957724176, 0.7428200727035176]
+```
+]
+
+---
+# Python API Example: Upper limit
+
+.kol-3-5[
+.tiny[
+```console
+$ python -m pip install pyhf[jax,contrib]
+$ pyhf contrib download https://doi.org/10.17182/hepdata.90607.v3/r3 1Lbb-pallet
+```
+```python
+import json
+import matplotlib.pyplot as plt
+import numpy as np
+import pyhf
+from pyhf.contrib.viz.brazil import plot_results
+
+pyhf.set_backend("jax")  # Optional for speed
+
+spec = json.load(open("1Lbb-pallet/BkgOnly.json"))
+patchset = pyhf.PatchSet(json.load(open("1Lbb-pallet/patchset.json")))
+
+workspace = pyhf.Workspace(spec)
+model = workspace.model(patches=[patchset["C1N2_Wh_hbb_900_250"]])
+
+test_pois = np.linspace(0, 5, 41)  # POI step of 0.125
+data = workspace.data(model)
+obs_limit, exp_limits, (test_pois, results) = pyhf.infer.intervals.upperlimit(
+    data, model, test_pois, return_results=True
+)
+
+print(f"Observed limit: {obs_limit}")
+# Observed limit: 2.547958147632675
+print(f"Expected limits: {[limit.tolist() for limit in exp_limits]}")
+# Expected limits: [0.7065311975182036, 1.0136453820160332,
+# 1.5766626372587724, 2.558234487679955, 4.105381941514062]
+
+fig, ax = plt.subplots()
+artists = plot_results(test_pois, results, ax=ax)
+fig.savefig("upper_limit.pdf")
+```
+]
+]
+<br><br>
+.kol-2-5[
+.center.width-100[![upper_limit](figures/upper_limit.png)]
+]
+
+---
+# API Example: Extend with cabinetry
+.kol-5-7[
+.tiny[
+```python
+import json
+import cabinetry
+import pyhf
+from cabinetry.model_utils import prediction
+from pyhf.contrib.utils import download
+
+# download the ATLAS bottom-squarks analysis probability models from HEPData
+download("https://www.hepdata.net/record/resource/1935437?view=true", "bottom-squarks")
+
+# construct a workspace from a background-only model and a signal hypothesis
+bkg_only_workspace = pyhf.Workspace(
+    json.load(open("bottom-squarks/RegionC/BkgOnly.json"))
+)
+patchset = pyhf.PatchSet(json.load(open("bottom-squarks/RegionC/patchset.json")))
+workspace = patchset.apply(bkg_only_workspace, "sbottom_600_280_150")
+
+# construct the probability model and observations
+model, data = cabinetry.model_utils.model_and_data(workspace)
+
+# produce visualizations of the pre-fit model and observed data
+prefit_model = prediction(model)
+cabinetry.visualize.data_mc(prefit_model, data)
+
+# fit the model to the observed data
+fit_results = cabinetry.fit.fit(model, data)
+
+# produce visualizations of the post-fit model and observed data
+postfit_model = prediction(model, fit_results=fit_results)
+cabinetry.visualize.data_mc(postfit_model, data)
+```
+]
+]
+.kol-2-7.center[
+.center.width-90[![cabinetry_SR_metsigST_prefit](figures/cabinetry_SR_metsigST_prefit.png)]
+.center.width-90[![cabinetry_SR_metsigST_postfit](figures/cabinetry_SR_metsigST_postfit.png)]
+]
+
+---
 # Rapid adoption in ATLAS...
 <!--  -->
 .kol-1-3[
-- **18** ATLAS SUSY, Exotics, Top analyses with full probability models published to HEPData
+- **22** ATLAS SUSY, Exotics, Top analyses with full probability models published to HEPData
 - ATLAS SUSY will be continuing to publish full Run 2 likelihoods
 ]
 .kol-2-3[
@@ -681,42 +745,25 @@ Backup
 ]
 .kol-2-3[
 .center.width-100[[![sabine_workshop_slide](figures/sabine_workshop_slide.png)](https://inspirehep.net/literature/1814793)]
-.center.smaller[[Feedback on use of public Likelihoods](https://indico.cern.ch/event/957797/contributions/4026032/), Sabine Kraml<br>(ATLAS Exotics + SUSY Reinterpretations Workshop)]
+.center.smaller[[Feedback on use of public probability models](https://indico.cern.ch/event/957797/contributions/4026032/), Sabine Kraml<br>(ATLAS Exotics + SUSY Reinterpretations Workshop)]
 <!--  -->
 ]
 - Have produced three comparisons to published ATLAS likelihoods: [ATLAS-SUSY-2018-04](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-04/), [ATLAS-SUSY-2018-31](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-31/), [ATLAS-SUSY-2019-08](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2019-08/)
    - Compare simplified likelihood (bestSR) to full likelihood (`pyhf`) using `SModelS`
 
 ---
-# Run Example: Hypothesis test
+# Ongoing work to interface CMS Combine
 
-.smaller[
-```console
-$ python -m pip install pyhf[jax,contrib]
-$ pyhf contrib download https://doi.org/10.17182/hepdata.90607.v3/r3 1Lbb-pallet
-```
-```python
-import json
-import pyhf
-
-pyhf.set_backend("jax")  # Optional for speed
-spec = json.load(open("1Lbb-pallet/BkgOnly.json"))
-patchset = pyhf.PatchSet(json.load(open("1Lbb-pallet/patchset.json")))
-
-workspace = pyhf.Workspace(spec)
-model = workspace.model(patches=[patchset["C1N2_Wh_hbb_900_250"]])
-
-test_poi = 1.0
-data = workspace.data(model)
-cls_obs, cls_exp_band = pyhf.infer.hypotest(
-    test_poi, data, model, test_stat="qtilde", return_expected_set=True
-)
-print(f"Observed CLs: {cls_obs}")
-# Observed CLs: 0.4573416902360917
-print(f"Expected CLs band: {[exp.tolist() for exp in cls_exp_band]}")
-# Expected CLs band: [0.014838293214187472, 0.05174259485911152,
-# 0.16166970886709053, 0.4097850957724176, 0.7428200727035176]
-```
+.kol-1-2.large[
+- `pyhf` users in 2022: ATLAS, Belle II, phenomenology community, IRIS-HEP
+- Working [to create a bridge](https://github.com/scikit-hep/pyhf/issues/344) for CMS to use and validate with a converter to [CMS Combine](https://cms-analysis.github.io/HiggsAnalysis-CombinedLimit/)
+   - Difficult as HistFactory is "closed world" of models and CMS Combine is RooFit "open world"
+- IRIS-HEP Fellow Summer 2022 project is ongoing with some promising preliminary results
+]
+.kol-1-2[
+<br><br>
+.center.width-100[[![IRIS-HEP-fellow-position](figures/IRIS-HEP-fellow-position.png)](https://iris-hep.org/fellow_projects.html)]
+.center.smaller[[.bold[A pyhf converter for binned likelihood models in CMS Combine]](https://iris-hep.org/fellow_projects.html)]
 ]
 
 ---
