@@ -97,6 +97,9 @@ Provide constraints on models through setting best limits
 <br>.bold[Beyond the Standard Model]
 ]
 
+<!-- If we look at the HistFactory model itself, we can see that it is comprised of two main parts.
+This first part in blue if a produce of Poissons across all bins in all channels (which you can think of as analysis regions).
+And then this second part in red are constraint terms.-->
 ---
 # HistFactory Template: at a glance
 
@@ -122,6 +125,8 @@ $$
    - encode systematic uncertainties (e.g. normalization, shape)
 - .red[Constraint p.d.f. (+ data) for "auxiliary measurements"]
 
+<!-- If we look furthe we also see that the Poissons event rate parameters are nominal rates that are modified by additive and multipicitiv modifiers
+which allow for encoding systematics, where some of the parameters of the event rates are also present in the contstraint terms -->
 ---
 # HistFactory Template: at a second glance
 
@@ -147,9 +152,9 @@ $$
    - encode systematic uncertainties (e.g. normalization, shape)
 - .red[Constraint p.d.f. (+ data) for "auxiliary measurements"]
 
-<!-- So HistFactory gives us a concise mathematical grammar for simultaneous fits across all channels
+<!-- So HistFactory gives us a concise mathematical grammar for a model across all channels
 (which are analysis regions) and bins, with systematic uncertanties that modify the Poisson event rate,
-which are coupled to sets of constraint terms.
+which are coupled to sets of constraint terms, which all goes into a simultaneous fit.
  -->
 ---
 # HistFactory Template: grammar
@@ -228,6 +233,16 @@ $$
    - Ongoing [IRIS-HEP supported Fellow](https://iris-hep.org/fellows/peterridolfi.html) work to provide conversion support to CMS Combine as of Summer 2022!
 ]
 
+<!-- pyhf support multiple tensor libraries like NumPy, PyTorch, TensorFlow, and JAX as computational backends to impliment n-dimensional
+array operations through a common API.
+These last three are machine learning libraries and allow for explotation of automatic differentiaion and hardware acceleration.
+Additionally, as there is huge buy in from industry to all of these libraries they are maintained by professional software engineers, which
+most physics anlaysts are not.
+In terms of hardware acceleration, this somwhat old plot on the left shows that for the interpolation proceedures for systematics hardware accleration
+can have a substantial impact for models with large complexity.
+However, as there is associated overhead with placing models on the GPU this means that for smaller models this is sometimes not beneficial.
+But there are instances that we've seen for large complex models where the time to fit has moved from hours to minutes, which can be quite useful.
+-->
 ---
 # Machine Learning Frameworks for Computation
 
@@ -257,6 +272,9 @@ $$
 ]
 ]
 
+<!-- In addition to the vectorization and acceleration provided by these tensor libraries, another important factor to fitting speeds has
+been automatic differentiation of the likelihood. The computational backends are able to setup a computational grpah that can propagate the
+gradient through the full calculation which then can provide the full graidnent to modern optimizers which can significantly speed up fits.-->
 ---
 # Automatic differentiation
 
@@ -278,6 +296,12 @@ $$
 ]
 ]
 
+<!-- Another important feature about pyhf is that the model specification is in JSON.
+This gives us a human and machine readable delcarative spec, and as JSON is everywhere and will be with us until the
+heat death of the Universe we have long term support baked in as well.
+It is additionally parsable by every language, and so is highly portable and is easily versioned, compressed, and preserved.
+It can also be patched which allows for interesting applications in analysis reinterpretation.
+With pyhf's CLI API we also support bi-directional translations with ROOT. -->
 ---
 # JSON spec fully describes the HistFactory model
 
