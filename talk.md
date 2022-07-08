@@ -299,6 +299,12 @@ $$
 .center[[`JSON` defining a single channel, two bin counting experiment with systematics](https://scikit-hep.org/pyhf/likelihood.html#toy-example)]
 ]
 
+<!-- Once pyhf was established and sufficiently feature complete, ATLAS released a PUB note in 2019 that validated it by reproducing
+a published SUSY search for bottom squarks to well within uncertanties.
+Using pyhf's JSON specification for HistFactory models ATLAS additionally published the full probability model for all mass hypotheses
+in the analysis to HEPData.
+This was the first full probabiliy model ever published by an LHC experiment, as noted in this CERN article from 2020, and ATLAS has now gone on to
+publish 22 full probabiliy models.-->
 ---
 # ATLAS validation and publication of models
 
@@ -317,12 +323,21 @@ $$
 
 ---
 # Large community adoption followed (2020 on)
-<!-- As of 2022-07-07 have 32 use citations -->
-<!-- .center.large.bold[Placeholder slide] -->
+<!-- Following the validation and publication of the first full probabiliyt model, there has been a large uptick in community adoption since 2020.
+This slide shows a collection of the 32 use citations that pyhf has recieved from a variety of theory and experiment papers and publications,
+including several ATLAS publications and a publication from Belle II.
+This has been exciting to see as we feel that having open community tooling across theory and experiment is important for clear communication.
+-->
 .center[
 .width-95[[![community-adoption](figures/community-adoption.svg)](https://scikit-hep.org/pyhf/citations.html)]
 ]
 
+<!-- Focusing on this idea of community use and involvement, it is important to emphasize that pyhf is a **library** focused on modeling
+and inference and not a framework. As part of the Scikit-HEP ecosystem, pyhf's API was designed to be extensible which has allowed for
+libraries like cabinetry to use pyhf as an inference engine.
+cabinetry is a library that allows for building and steering profile likelihood fits and supports APIs for common inferenece tasks and
+visualization in analysis.
+cabinery is a great example of using pyhf to build tools that meet the needs of users while still benefitting from improvements to pyhf releases. -->
 ---
 # Extending and visualization: cabinetry
 
@@ -341,6 +356,11 @@ $$
 .center[Alexander Held, [ATLAS SUSY Workshop 2021](https://indico.cern.ch/event/1056428/contributions/4523825/)]
 ]
 
+<!-- Keeping on this theme of uses in communities, both pyhf and cabinetry are components of the IRIS-HEP Analysis Systems pipeline which
+is a substrate of analysis techoogies.
+Given the interoparable design this allows for pyhf to plugin and be used in deployment as a tool to reduce the time to insight and
+inference and when pyhf's JSON spec that allows for patching of signal models is combined with techologies like RECAST it becomes an
+enabling techology for reinterpreation as well. -->
 ---
 # Core part of IRIS-HEP Analysis Systems pipeline
 .center[
@@ -351,6 +371,13 @@ $$
 - .large[Accelerating fitting (reducing time to .bold[insight] (statistical inference)!)] (`pyhf` + `cabinetry`)
 - .large[An enabling technology for .bold[reinterpretation]] (`pyhf` + RECAST)
 
+<!-- Finally, in thinking into the future about how pyhf can be deployed in non-traditional situations, here's an example of using pyhf natively
+in the browser.
+This slide shows the Pyodide CPython port into WebAssembly running natively in my web browser with an interface exposed by the Jupyterlite kernel.
+With Pyodidie the full scientific Python stack (NumPy, SciPy, matplotlib) is supported which allows for things like pyhf to be natively installed
+from PyPI inside the browser.
+This means that we can directly copy an intro example from the pyhf documentation, and paste it into Jupyterlite, which when evaluated performs an
+upper limit scan which was run natively on the client side browser.-->
 ---
 # Browser native ecosystem as of April 2022
 
@@ -386,6 +413,14 @@ $$
 .center[[Pyodide](https://pyodide.org/en/stable/) CPython port to WebAssembly/Emscripten powering [JupyterLite](https://jupyterlite.readthedocs.io/) kernel]
 
 <!-- try-pyhf slide -->
+<!-- Now to be clear, I'm not suggesting or advocating that you run your physics analysis in the browser.
+However, what I am saying is that when combined with the PyScript framework for creating full web native applications with HTML and Pyodide
+(As it is fully client side, you can think of it very broadly as replacing JavaScript with WASM CPython.) there is an opportunity
+for creating tools for training, for web appliations, and validation that is all done natively with Python.
+For example, this "try-pyhf" example application that Giordon Stark made allows for a user to take any valid HistFactory model and
+inspect its model components, perform simple inference tasks, and visualize the model parameters and assocaited modifiers.
+This was all written using pyhf and simple HTML.
+-->
 ---
 # Enabling full web apps with PyScript
 
@@ -407,6 +442,10 @@ $$
 <!--  -->
 .center[Future software/statistics training, web applications, schemea validation enabled with [Pyodide](https://pyodide.org/en/stable/) and [PyScript](https://pyscript.net/)]
 
+<!-- And finally I think this area is exciting when combined with the timing that HEPData now further supports HistFactory JSON.
+HEPData entries that include a HistFactory JSON model now recieve a HistFactory badge and the model itself gets a unique DOI.
+So a big thanks to the HEPData team for this work and the pyhf team is looking forward to working with HEPData to investiage if there
+are ways to add visualization and interactivity for models to HEPData without encumbering the service. -->
 ---
 # HEPData support for HistFactory JSON and more
 
